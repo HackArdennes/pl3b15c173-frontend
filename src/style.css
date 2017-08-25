@@ -1,0 +1,36 @@
+#pl3b15c173-container {
+    position: absolute;
+    z-index: 10000;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: lightgray;
+    font-family: Helvetica, Sans-serif;
+    font-size: 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    padding: 5px 0;
+}
+
+#pl3b15c173-container > * {
+    margin: 5px 0;
+}
+
+.pl3b15c173-button,
+.pl3b15c173-input {
+    font-size: 16px;
+    padding: 5px;
+    width: 90%;
+    max-width: 400px;
+    height: 30px;
+    border-width: 1px;
+    padding: 5px;
+    box-sizing: content-box;
+}
+
+.pl3b15c173-error {
+    color: red;
+    font-weight: bold;
+}
