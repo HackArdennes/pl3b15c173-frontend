@@ -2,7 +2,7 @@
 
 import axios from 'axios'
 import Vue from 'vue'
-import config from './config.js'
+import config from '../config.js'
 import './style.css'
 
 if ('undefined' === typeof window.top.pl3b15c173) {
