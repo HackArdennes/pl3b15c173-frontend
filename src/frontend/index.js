@@ -4,7 +4,6 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import AppVue from './app.vue'
 import ConfirmVue from './confirm.vue'
-import HomepageVue from './homepage.vue'
 
 Vue.use(VueRouter)
 
@@ -16,5 +15,5 @@ const router = new VueRouter({
 
 const app = new Vue({
   router,
-  render: function(h) { return h(AppVue) }
+  render: (h) => { return h(AppVue) }
 }).$mount('#app')
