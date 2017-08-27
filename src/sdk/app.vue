@@ -11,7 +11,7 @@
     </template>
 
     <template v-else-if="stage === 3">
-      <h1>+1 point pour cette appli !</h1>
+      <h1>+1 point pour cette appli&nbsp;!</h1>
       <p><strong>Multiplie ton vote par 10 et tente de gagner ton pass 4J pour le Cabaret Vert 2018.</strong></p>
       <p>Fonce voir le mail que nous t'avons envoyé et confirme ton vote.</p>
     </template>
@@ -40,7 +40,7 @@
 
           setTimeout(function(that) {
             that.reset()
-          }, 10000, this)
+          }, 30000, this)
         }.bind(this)).catch(function(error) {
           if (error.response && error.response.status === 400) {
             if (error.response.data.error === 'Vote already exists') {
