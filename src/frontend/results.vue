@@ -36,7 +36,7 @@
 
         this.results = response.data.map(
           result => {
-            result.percent = Math.round(result.score*100/max)
+            result.percent = max === 0 ? 100 : Math.round(result.score*100/max)
             return result
           }
         )
