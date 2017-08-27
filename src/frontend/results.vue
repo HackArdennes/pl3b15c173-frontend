@@ -28,22 +28,30 @@
       }
     },
     created: function() {
-      axios.get(`${config.api_baseURL}/result`).then(function(response) {
-        let max = response.data.reduce(
-          (max, result) => (result.score > max ? result.score : max), 0
-        )
-
-        this.results = response.data.map(
-          result => {
-            result.percent = max === 0 ? 100 : Math.round(result.score*100/max)
-            return result
-          }
-        )
-      }.bind(this))
-      .catch(function() {
-        this.error = true
-      }.bind(this))
+      this.refresh()
+      setInterval(() => {
+        this.refresh()
+      }, 10000)
     },
+    methods: {
+      refresh: function() {
+        axios.get(`${config.api_baseURL}/result`).then(function(response) {
+          let max = response.data.reduce(
+            (max, result) => (result.score > max ? result.score : max), 0
+          )
+
+          this.results = response.data.map(
+            result => {
+              result.percent = max === 0 ? 100 : Math.round(result.score*100/max)
+              return result
+            }
+          )
+        }.bind(this))
+        .catch(function() {
+          this.error = true
+        }.bind(this))
+      }
+    }
   }
 </script>
 
