@@ -5,11 +5,11 @@
     </template>
 
     <template v-else-if="state === 'SUCCESS'">
-      <h1 v-if="">Votre vote a été confirmé !</h1>
+      <h1 v-if="">Ton vote a été confirmé !</h1>
     </template>
 
     <template v-else-if="state === 'ALREADY_CONFIRMED'">
-      <h1 v-if="">Votre vote a déjà été confirmé.</h1>
+      <h1 v-if="">Ton vote a déjà été confirmé.</h1>
     </template>
 
     <template v-else-if="state === 'ERROR'">
