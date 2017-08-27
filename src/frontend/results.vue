@@ -28,8 +28,7 @@
       }
     },
     created: function() {
-      axios.get(`${config.api_baseURL}/result`)
-      .then(function(response) {
+      axios.get(`${config.api_baseURL}/result`).then(function(response) {
         let max = response.data.reduce(
           (max, result) => (result.score > max ? result.score : max), 0
         )
@@ -44,7 +43,7 @@
       .catch(function() {
         this.error = true
       }.bind(this))
-    }
+    },
   }
 </script>
 
