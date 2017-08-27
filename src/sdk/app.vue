@@ -44,7 +44,7 @@
         }.bind(this)).catch(function(error) {
           if (error.response && error.response.status === 400) {
             if (error.response.data.error === 'Vote already exists') {
-              this.error = 'Vous avez déjà voté.'
+              this.error = 'Tu as déjà voté.'
             } else {
               this.error = 'Cet e-mail ne semble pas valide.'
             }
