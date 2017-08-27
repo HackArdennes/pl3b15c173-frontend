@@ -1,19 +1,19 @@
 <template>
   <div id="pl3b15c173-container">
     <template v-if="stage === 1">
-      <button class="pl3b15c173-button" v-on:click="stage=2">Voter pour ce projet</button>
+      <button class="pl3b15c173-button" v-on:click="stage=2">Je vote pour ce projet</button>
     </template>
 
     <template v-else-if="stage === 2">
       <p class="pl3b15c173-error" v-if="error">{{ error }}</p>
-      <input type="text" placeholder="Mon e-mail" required class="pl3b15c173-input" v-model="email">
+      <input type="text" placeholder="Mon e-mail (pour valider le vote)" required class="pl3b15c173-input" v-model="email">
       <button class="pl3b15c173-button" v-on:click="vote()" v-bind:disabled="!email">Voter !</button>
     </template>
 
     <template v-else-if="stage === 3">
-      <p>Votre vote a bien été pris en compte !</p>
-      <p>Confirme ce vote en cliquant dans le lien que nous t'avons envoyé <strong>et multiplie la valeur de ce vote par 10 !</strong>.</p>
-      <p>En confirmant tu participeras également au tirage au sort pour gagner ton Pass Cabaret Vert 2018 !</p>
+      <h1>+1 point pour cette appli !</h1>
+      <p><strong>Multiplie ton vote par 10 et tente de gagner ton pass 4J pour le Cabaret Vert 2018.</strong></p>
+      <p>Fonce voir le mail que nous t'avons envoyé et confirme ton vote.</p>
     </template>
   </div>
 </template>
@@ -46,7 +46,7 @@
             if (error.response.data.error === 'Vote already exists') {
               this.error = 'Vous avez déjà voté.'
             } else {
-              this.error = 'Cette adresse ne semble pas valide.'
+              this.error = 'Cet e-mail ne semble pas valide.'
             }
           } else {
             this.error = 'Une erreur est survenue. Merci de réessayer.'

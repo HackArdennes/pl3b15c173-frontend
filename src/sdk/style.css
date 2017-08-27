@@ -11,7 +11,8 @@
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
-    padding: 5px 0;
+    box-sizing: border-box;
+    padding: 5px 10px;
 }
 
 #pl3b15c173-container > * {
@@ -22,12 +23,12 @@
 .pl3b15c173-input {
     font-size: 16px;
     padding: 5px;
-    width: 90%;
+    width: 100%;
     max-width: 400px;
-    height: 30px;
+    height: 40px;
     border-width: 1px;
     padding: 5px;
-    box-sizing: content-box;
+    box-sizing: border-box;
 }
 
 .pl3b15c173-error {
